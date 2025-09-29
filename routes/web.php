@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\MahasiswaController;
+
+use App\Http\Controllers\MatakuliahController;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Route contoh basic
+Route::get('/pcr', function () {
+    return ('Selamat Datang di Website Kampus PCR!');
+});
+
+Route::get('/mahasiswa', function () {
+    return ('Hallo Mahasiswa PCR');
+});
+
+Route::get('/nama/{param1}', function ($param1) {
+    return 'Nama saya: '.$param1;
+});
+
+Route::get('/nim/{param1}', function ($param1) {
+    return 'Nim saya: '.$param1;
+});
+
+// Route ke view About
+Route::get('/about', function () {
+    return view('halaman-about');
+});
+
+// Route ke MahasiswaController
+Route::get('/mahasiswa/{param1}', [MahasiswaController::class, 'show']);
+
+// Route ke MatakuliahController
+Route::get('/matakuliah', [MatakuliahController::class, 'index']);
+Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
