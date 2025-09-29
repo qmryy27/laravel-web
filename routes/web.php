@@ -38,3 +38,7 @@ Route::get('/mahasiswa/{param1}', [MahasiswaController::class, 'show']);
 // Route ke MatakuliahController
 Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
+
+
+
+// HAHAHA
