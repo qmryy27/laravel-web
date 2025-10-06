@@ -89,15 +89,15 @@
                                 <form action="" method="POST">
                                     <div class="mb-3">
                                         <label for="nama" class="form-label" >Nama</label>
-                                        <input type="text" name="nama" class="form-control">
+                                        <input type="text" name="nama" class="form-control" value="{{old('nama')}}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label" >Email</label>
-                                        <input type="text"name="email" class="form-control">
+                                        <input type="text"name="email" class="form-control" value="{{old('email')}}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="pertanyaan" class="form-label" >Pertanyaan</label>
-                                        <textarea class="form-control"name="pertanyaan" rows="4"></textarea>
+                                        <textarea class="form-control"name="pertanyaan" rows="4">{{old('pertanyaan')}}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
                                 </form>
