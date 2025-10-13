@@ -35,6 +35,16 @@ class QuestionController extends Controller
             'nama.required'=>'Nama tidak boleh kosong',
             'email.email'=> 'Email tidak valid'
         ]);
+        // return redirect()->route('matakuliah');
+
+        // return redirect()->back();
+
+        // return redirect()->away('https://pcr.ac.id');
+
+        return redirect()->route('home')->with('info', 'Barhasil Dikirim');
+
+
+
 
         //dd($request->all()/;
         $data['nama']       = $request->nama;
