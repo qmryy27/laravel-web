@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\DashboardController;
 
-use App\Http\Controllers\MatakuliahController;
-
-use App\Http\Controllers\HomeController;
-
-use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\PelangganController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,11 +24,11 @@ Route::get('/mahasiswa', function () {
 });
 
 Route::get('/nama/{param1}', function ($param1) {
-    return 'Nama saya: '.$param1;
+    return 'Nama saya: ' . $param1;
 });
 
 Route::get('/nim/{param1}', function ($param1) {
-    return 'Nim saya: '.$param1;
+    return 'Nim saya: ' . $param1;
 });
 
 // Route ke view About
@@ -47,9 +47,11 @@ Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('question/store', [QuestionController::class, 'store'])
-		->name('question.store');
+    ->name('question.store');
 
+Route::resource('pelanggan', PelangganController::class);
 
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
 
